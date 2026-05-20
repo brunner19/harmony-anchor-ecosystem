@@ -1,0 +1,57 @@
+{
+  "communityId": "makoko-waterfront-demo",
+  "name": "Makoko Waterfront Demonstration Area",
+  "country": "Nigeria",
+  "state": "Lagos",
+  "localGovernmentArea": "Lagos Mainland",
+  "coordinates": {
+    "lat": 6.4969,
+    "lng": 3.3936
+  },
+  "languages": ["English", "Nigerian Pidgin", "Yoruba"],
+  "households": 380,
+  "estimatedResidents": 1840,
+  "children": 620,
+  "structures": 412,
+  "tenureProfile": "Informal occupancy with long-term community presence and mixed documentary evidence.",
+  "riskInputs": {
+    "recentReports": [
+      "Survey markers seen near waterfront access road.",
+      "Residents heard informal notice about beautification project.",
+      "Two excavators parked near a nearby access point.",
+      "No written relocation plan has been shared."
+    ],
+    "policySignals": [
+      "Waterfront regeneration language in public statements",
+      "Right-of-way and public safety pretexts"
+    ],
+    "satelliteSignals": {
+      "vegetationLossPercent": 4,
+      "newRoadworksMeters": 220,
+      "demolitionScars": 0
+    }
+  },
+  "upgradeConstraints": {
+    "floodRisk": "high",
+    "soil": "lagoon edge and timber pile context",
+    "powerLineSetbackMeters": 15,
+    "maxInitialBudgetUsd": 450000,
+    "priorityAssets": ["housing", "school", "clinic", "sanitation", "flood-safe walkways", "micro-enterprise docks"]
+  },
+  "sampleEvidence": [
+    {
+      "type": "photo",
+      "filename": "waterfront-marker.jpg",
+      "timestamp": "2026-05-18T16:25:00+01:00",
+      "gps": { "lat": 6.4971, "lng": 3.3941 },
+      "description": "Painted survey marker close to occupied homes."
+    },
+    {
+      "type": "voice",
+      "filename": "elder-testimony.m4a",
+      "timestamp": "2026-05-18T17:05:00+01:00",
+      "gps": { "lat": 6.4964, "lng": 3.3929 },
+      "description": "Resident testimony describing long-term residence and lack of written notice."
+    }
+  ]
+}
