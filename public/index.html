@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c4a4a" />
+    <title>Harmony Anchor</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/styles.css?v=20260520-7" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">HA</div>
+        <div>
+          <p class="eyebrow">Harmony Anchor Ecosystem</p>
+          <h1>Make upgrading the obvious choice before demolition starts.</h1>
+        </div>
+      </div>
+      <div class="mission-stack" aria-label="Mission status">
+        <div class="status-pill" id="connectionStatus">Offline-ready</div>
+        <div class="hero-flags" aria-label="Product commitments">
+          <span>Makoko demo</span>
+          <span>Consent gated</span>
+          <span>Open source</span>
+        </div>
+        <p>Evidence, law, design, economics, and coordination in one response packet.</p>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="mission-brief" aria-label="Mission brief">
+        <div>
+          <p class="eyebrow">Mission</p>
+          <h2>Protect residents by making surprise eviction slower, riskier, and less attractive than a verified upgrade compact.</h2>
+        </div>
+        <dl>
+          <div>
+            <dt>Target</dt>
+            <dd>Zero surprise demolitions</dd>
+          </div>
+          <div>
+            <dt>Proof</dt>
+            <dd>Hashed evidence and digital twin</dd>
+          </div>
+          <div>
+            <dt>Offer</dt>
+            <dd>Flood-safe, revenue-positive upgrade plan</dd>
+          </div>
+          <div>
+            <dt>Guardrail</dt>
+            <dd>No public identities without consent</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="control-panel" aria-label="Community intake">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Pilot</p>
+            <h2 id="communityName">Loading community</h2>
+          </div>
+          <button class="icon-button" id="voiceButton" type="button" title="Start voice note">◉</button>
+        </div>
+
+        <div class="question-walkthrough" aria-label="Field questions">
+          <button class="question-step is-active" data-question="What changed on the ground? Include equipment, survey marks, officials, notices, fires, power-line claims, roadworks, or rumors." type="button">
+            <span>01</span>
+            <strong>What changed?</strong>
+          </button>
+          <button class="question-step" data-question="What proof exists? List photos, videos, voice notes, GPS points, witnesses, dates, and who can safely verify them." type="button">
+            <span>02</span>
+            <strong>What proof exists?</strong>
+          </button>
+          <button class="question-step" data-question="Who is most at risk? Count households, children, schools, clinics, livelihoods, disability needs, and urgent safety constraints." type="button">
+            <span>03</span>
+            <strong>Who is at risk?</strong>
+          </button>
+          <button class="question-step" data-question="What would make upgrading attractive to officials and investors? Name sanitation, flood safety, tax, jobs, public relations, and fast-track permitting wins." type="button">
+            <span>04</span>
+            <strong>What is the win-win?</strong>
+          </button>
+        </div>
+        <p class="question-detail" id="questionPrompt">What changed on the ground? Include equipment, survey marks, officials, notices, fires, power-line claims, roadworks, or rumors.</p>
+
+        <div class="field-cues" aria-label="Field capture modes">
+          <span>Voice note</span>
+          <span>GPS point</span>
+          <span>Witness log</span>
+          <span>Photo/video</span>
+        </div>
+
+        <label for="situation">Threat notes</label>
+        <textarea id="situation" rows="6">Survey markers appeared near homes. Residents heard a waterfront beautification project may require people to vacate. Excavators were seen near the access road. No written notice or relocation plan has been shared.</textarea>
+
+        <div class="quick-grid">
+          <button data-signal="Police and task force presence reported near the settlement." type="button">Security presence</button>
+          <button data-signal="Power line setback and right-of-way language is being used as a pretext." type="button">Power-line pretext</button>
+          <button data-signal="Developer and waterfront investment rumors are increasing land pressure." type="button">Developer pressure</button>
+          <button data-signal="Residents have new photos, videos, voice notes, and GPS points." type="button">New evidence</button>
+          <button data-signal="Government win-win angle: upgrading protects public image, due process, schooling continuity, sanitation delivery, and future tax base." type="button">PR upside</button>
+          <button data-signal="Permitting path requested: consultation record, impact assessment, safety drawings, temporary occupation plan, and staged approvals." type="button">Permitting path</button>
+          <button data-signal="Counterparty channel: identify the relevant official, developer, or agency desk; keep outreach respectful; log every ask and reply." type="button">Counterparty channel</button>
+        </div>
+
+        <div class="actions">
+          <button class="primary" id="runSwarm" type="button">Generate response packet</button>
+          <button class="secondary" id="saveOffline" type="button">Save offline packet</button>
+          <button class="secondary" id="newIncident" type="button">New incident</button>
+        </div>
+        <p class="intake-footnote">Run now if needed; missing inputs become open evidence requests, not public claims.</p>
+      </section>
+
+      <section class="risk-panel" aria-label="Risk overview">
+        <div class="risk-meter">
+          <svg viewBox="0 0 160 160" role="img" aria-label="Risk score">
+            <circle cx="80" cy="80" r="68" class="meter-bg"></circle>
+            <circle cx="80" cy="80" r="68" class="meter-fg" id="riskArc"></circle>
+          </svg>
+          <div class="risk-value">
+            <span id="riskScore">--</span>
+            <small id="riskLevel">waiting</small>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">Timeline</p>
+          <h2 id="timeline">Run the swarm to generate a response.</h2>
+          <p id="confidence">Confidence appears here after analysis.</p>
+          <div class="threat-map" aria-label="Evidence map preview">
+            <span class="map-line map-line-a" aria-hidden="true"></span>
+            <span class="map-line map-line-b" aria-hidden="true"></span>
+            <span class="map-zone" aria-hidden="true"></span>
+            <span class="map-pin pin-homes">Homes</span>
+            <span class="map-pin pin-road">Access road</span>
+            <span class="map-pin pin-water">Waterfront</span>
+          </div>
+          <div class="evidence-cues" id="evidenceCueList" aria-label="Evidence cues">
+            <span>Awaiting verified artifacts</span>
+            <span>Public summary locked</span>
+          </div>
+          <div class="response-ladder" aria-label="Response ladder">
+            <span>Verify</span>
+            <span>File</span>
+            <span>Offer</span>
+            <span>Mobilize</span>
+          </div>
+          <div class="intel-strip" aria-label="Operational context">
+            <div>
+              <span>Residents</span>
+              <strong id="residentCount">--</strong>
+            </div>
+            <div>
+              <span>Evidence</span>
+              <strong id="artifactCount">--</strong>
+            </div>
+            <div>
+              <span>Review</span>
+              <strong id="reviewStatus">Draft</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="modules" aria-label="Agent outputs">
+        <article class="module threat-module">
+          <p class="module-kicker">Risk</p>
+          <h3>Threat Sentinel</h3>
+          <ul id="threatList"></ul>
+        </article>
+        <article class="module evidence-module">
+          <p class="module-kicker">Proof</p>
+          <h3>Evidence Fortress</h3>
+          <p id="evidenceSummary">Tamper-evident bundle will appear here.</p>
+        </article>
+        <article class="module legal-module">
+          <p class="module-kicker">Rights</p>
+          <h3>Legal Oracle</h3>
+          <ul id="legalList"></ul>
+        </article>
+        <article class="module upgrade-module">
+          <p class="module-kicker">Alternative</p>
+          <h3>Upgrade Designer</h3>
+          <p id="upgradeSummary">Concept plan will appear here.</p>
+        </article>
+        <article class="module impact-module">
+          <p class="module-kicker">Incentives</p>
+          <h3>Impact Simulator</h3>
+          <div id="impactTable"></div>
+        </article>
+        <article class="module coordination-module">
+          <p class="module-kicker">Execution</p>
+          <h3>Coordination</h3>
+          <ul id="taskList"></ul>
+        </article>
+      </section>
+
+      <section class="response-plan" aria-label="Next actions">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Next 72 hours</p>
+            <h2>Action plan for counsel, mappers, designers, and advocates</h2>
+          </div>
+        </div>
+        <ol id="responseTimeline">
+          <li data-phase="T+0">Generate a packet to build the first response plan.</li>
+        </ol>
+      </section>
+
+      <section class="packet" aria-label="Generated packet">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Public-safe output</p>
+            <h2>Evidence, legal, upgrade, and advocacy packet</h2>
+          </div>
+          <div class="packet-actions">
+            <button class="secondary" id="openCounselMemo" type="button">Open counsel memo</button>
+            <button class="secondary" id="copyPacket" type="button">Copy</button>
+          </div>
+        </div>
+        <div class="packet-tabs" aria-label="Packet sections">
+          <button class="is-active" data-packet="full" type="button">Full packet</button>
+          <button data-packet="evidence" type="button">Evidence</button>
+          <button data-packet="legal" type="button">Legal</button>
+          <button data-packet="upgrade" type="button">Upgrade</button>
+          <button data-packet="advocacy" type="button">Advocacy</button>
+        </div>
+        <pre id="packetOutput">No packet generated yet.</pre>
+      </section>
+    </main>
+
+    <script src="/app.js?v=20260520-7" type="module"></script>
+  </body>
+</html>
