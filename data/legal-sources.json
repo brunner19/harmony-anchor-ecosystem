@@ -1,0 +1,26 @@
+[
+  {
+    "name": "UN Basic Principles and Guidelines on Development-Based Evictions and Displacement",
+    "jurisdiction": "International",
+    "url": "https://www.ohchr.org/Documents/Issues/Housing/Guidelines_en.pdf",
+    "use": "Due process, consultation, notice, remedies, relocation, and proportionality checks."
+  },
+  {
+    "name": "African Charter on Human and Peoples' Rights",
+    "jurisdiction": "African regional",
+    "url": "https://achpr.au.int/en/node/641",
+    "use": "Dignity, property, family, development, fair process, and peoples' rights framing."
+  },
+  {
+    "name": "Land Use Act 1978",
+    "jurisdiction": "Nigeria",
+    "url": "https://www.oicrf.org/-/land-use-decree-1978",
+    "use": "Governor-held land administration, occupancy rights, revocation and compensation review."
+  },
+  {
+    "name": "Lagos State Urban and Regional Planning and Development Law 2010",
+    "jurisdiction": "Lagos State",
+    "url": "https://epp.lagosstate.gov.ng/regulations/LSURPD_LAW_2010.pdf",
+    "use": "Planning permit, development control, building control, and urban regeneration compliance review."
+  }
+]
